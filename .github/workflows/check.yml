@@ -28,5 +28,5 @@ jobs:
           POSTGRES_DB: sampledb
           POSTGRES_USER: sgpostgres
           POSTGRES_PASSWORD: Ur2v7bbLPg@6WIqN
-        run: python script.py
+        run: python test.py
           
