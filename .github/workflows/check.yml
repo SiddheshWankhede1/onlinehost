@@ -1,0 +1,32 @@
+name: Execute Delete Quer
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run_script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install psycopg2
+        run: |
+          pip install psycopg2-binary
+
+      - name: Execute script.py
+        env:
+          POSTGRES_HOST: SG-neat-dream-3695-5372-pgsql-master.servers.mongodirector.com
+          POSTGRES_DB: sampledb
+          POSTGRES_USER: sgpostgres
+          POSTGRES_PASSWORD: Ur2v7bbLPg@6WIqN
+        run: python script.py
+          
